@@ -1,5 +1,6 @@
 import { sampleCommandCallback } from './sample-command.js';
+import { registerCallback } from './register.js';
 
 export const register = (app) => {
-  app.command('/sample-command', sampleCommandCallback);
+  app.command('/pjk-register', registerCallback);
 };
