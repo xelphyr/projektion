@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Slack bot application",
   "type": "module",
-  "main": "src/app.js",
+  "main": "src/bootstrap.js",
   "scripts": {
-    "dev": "node --watch src/app.js",
+    "dev": "node --watch src/bootstrap.js",
     "lint": "npx @biomejs/biome check src/**/*.js app-oauth.js",
     "lint:fix": "npx @biomejs/biome check --write src/**/*.js app-oauth.js",
-    "start": "node src/app.js",
+    "start": "node src/bootstrap.js",
     "test": "node --test src/tests/**/*.spec.js"
   },
   "author": "Slack Technologies, LLC",
