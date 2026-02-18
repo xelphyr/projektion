@@ -1,5 +1,5 @@
-import { sampleViewCallback } from './sample-view.js';
+import { projectRegisterViewCallback } from './project-register-view.js';
 
 export const register = (app) => {
-  app.view('sample_view_id', sampleViewCallback);
+  app.view('project_register_view', projectRegisterViewCallback)
 };
