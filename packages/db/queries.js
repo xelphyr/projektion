@@ -1,5 +1,19 @@
 import pool from '@projektion/db'
 
+export async function checkProjectExists(channelId) {
+    const project_exists = await pool.query(
+        `SELECT
+            name
+        FROM
+            projects
+        WHERE
+            channel_id = $1`,
+        [channelId]
+    );
+    console.log(project_exists.rows)
+    return (project_exists.rowCount > 0) ? project_exists.rows[0].name : null
+}
+
 export async function addProject(channelId, projectName, description) {
     return await pool.query(
         `INSERT INTO  
