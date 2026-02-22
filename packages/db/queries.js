@@ -49,3 +49,20 @@ export async function getTagsList(){
         FROM tags`,
     )).rows.map(e => e.name);
 }
+
+export async function getProjectsAndDetails(){
+    return (await pool.query(
+        `SELECT 
+            p.*,
+            COALESCE(
+                json_agg(t.*) FILTER (WHERE t.id IS NOT NULL),
+                '[]'
+            ) as tags
+        FROM
+            projects p
+        LEFT JOIN project_tags pt ON pt.project_id = p.id
+        LEFT JOIN tags t on t.id = pt.tag_id
+        GROUP BY p.id
+        `
+    ))
+}

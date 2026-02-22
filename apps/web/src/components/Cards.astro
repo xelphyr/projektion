@@ -1,0 +1,18 @@
+---
+import Card from "./Card.astro"
+
+const {data} = Astro.props
+---
+<div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cold-3">
+{data.map(project => (
+    <Card>
+        <h2 slot="header">{project.name}</h2>
+        <p slot="body">{project.description}</p>
+        <div slot="footer">
+            {project.tags.map(tag => (
+                <span style={`background-color : red`}>{tag.name}</span>
+            ))}
+        </div>
+    </Card>
+))}
+</div>

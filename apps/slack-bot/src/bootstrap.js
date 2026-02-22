@@ -1,7 +1,5 @@
 import dotenv from "dotenv"
 
-dotenv.config({
-  path: `${process.cwd()}/../../.env`
-})
+dotenv.config()
 
 await import("./app.js")

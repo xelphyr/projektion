@@ -1,0 +1,11 @@
+---
+import {getProjectsAndDetails} from "@projektion/db/queries"
+import Layout from "../../layouts/Layout.astro";
+import Cards from "../../components/Cards.astro"
+
+const {rows} = (await getProjectsAndDetails())
+const multipliedData = Array.from({ length: 10 }, () => rows[0]);
+---
+<Layout>
+    <Cards data = {multipliedData} />
+</Layout>

@@ -17,5 +17,9 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "^2.3.13"
+  },
+  "scripts": {
+    "dev:web": "npm --workspace=apps/web run dev",
+    "dev:slack": "npm --workspace=apps/slack-bot run dev"
   }
 }
